@@ -11,13 +11,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2025-06-08
  */
 @SpringBootApplication
-public class SpringBootPrimeirosPassosApplication {
+public class ProdutosApiApplication {
 
 	/**
 	 * Método principal que inicia a aplicação Spring Boot.
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootPrimeirosPassosApplication.class, args);
+		SpringApplication.run(ProdutosApiApplication.class, args);
 	}
 
 }
