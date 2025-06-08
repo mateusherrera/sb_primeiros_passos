@@ -1,16 +1,31 @@
 package io.github.mateusherrera.sb_primeiros_passos.model;
 
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+
 /**
  * Classe que representa um produto.
  *
  * @author Mateus Herrera
  * @since 2025-06-08
  */
+@Entity
+@Table(name="produto")
 public class Produto {
     // ini: atributos
+    @Id
+    @Column(name="id")
     private String id;
+
+    @Column(name="nome")
     private String nome;
+
+    @Column(name="descricao")
     private String descricao;
+
+    @Column(name="preco")
     private Double preco;
     // fim: atributos
 
