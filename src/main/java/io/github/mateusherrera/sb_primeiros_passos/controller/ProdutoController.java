@@ -59,6 +59,18 @@ public class ProdutoController {
     }
 
     /**
+     * Método para atualizar um produto por ID.
+     *
+     * @param id ID do produto a ser atualizado.
+     * @param produto Objeto Produto com os dados atualizados.
+     */
+    @PutMapping("{id}")
+    public void atualizar(@PathVariable String id, @RequestBody Produto produto) {
+        produto.setId(id);
+        this.produtoRepository.save(produto);
+    }
+
+    /**
      * Método para excluir um produto por ID.
      *
      * @param id ID do produto a ser excluído.
