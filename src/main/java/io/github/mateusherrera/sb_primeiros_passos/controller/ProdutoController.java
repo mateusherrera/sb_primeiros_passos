@@ -57,5 +57,15 @@ public class ProdutoController {
     public Produto buscarPorId(@PathVariable("id") String id) {
         return this.produtoRepository.findById(id).orElse(null);
     }
+
+    /**
+     * Método para excluir um produto por ID.
+     *
+     * @param id ID do produto a ser excluído.
+     */
+    @DeleteMapping("{id}")
+    public void deletar(@PathVariable String id) {
+        this.produtoRepository.deleteById(id);
+    }
     // fim: métodos
 }
