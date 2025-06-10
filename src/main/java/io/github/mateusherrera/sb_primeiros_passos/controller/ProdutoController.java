@@ -2,10 +2,7 @@ package io.github.mateusherrera.sb_primeiros_passos.controller;
 
 import io.github.mateusherrera.sb_primeiros_passos.model.Produto;
 import io.github.mateusherrera.sb_primeiros_passos.repository.ProdutoRepository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -48,6 +45,17 @@ public class ProdutoController {
 
         this.produtoRepository.save(produto);
         return produto;
+    }
+
+    /**
+     * Método para buscar um produto por ID.
+     *
+     * @param id ID do produto a ser buscado.
+     * @return Produto encontrado ou null se não existir.
+     */
+    @GetMapping("{id}")
+    public Produto buscarPorId(@PathVariable("id") String id) {
+        return this.produtoRepository.findById(id).orElse(null);
     }
     // fim: métodos
 }
